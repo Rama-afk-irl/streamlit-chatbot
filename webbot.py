@@ -36,6 +36,8 @@ def main():
             response = "Pigoo7"
         elif "jebin" in prompt.lower():
             response = "Hentai"
+        elif "jeeva","venkey","levins" in prompt.lower():
+            response = "pookie 😉"
         else:
             with st.spinner("Thinking...."):
                 response = st.session_state.conversation.predict(input=prompt)
@@ -46,3 +48,4 @@ def main():
 if __name__ == "__main__":
 
     main() 
+
