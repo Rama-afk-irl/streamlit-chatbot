@@ -36,7 +36,11 @@ def main():
             response = "Pigoo7"
         elif "jebin" in prompt.lower():
             response = "Hentai"
-        elif "jeeva","venkey","levins" in prompt.lower():
+        elif "jeeva" in prompt.lower():
+            response = "pookie 😉"
+        elif "venky" in prompt.lower():
+            response = "pookie 😉"
+        elif "levins" in prompt.lower():
             response = "pookie 😉"
         else:
             with st.spinner("Thinking...."):
@@ -48,4 +52,5 @@ def main():
 if __name__ == "__main__":
 
     main() 
+
 
