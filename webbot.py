@@ -25,7 +25,7 @@ def main():
     If asked "who created you?" or "who made you?", you must answer that you were created Rama.
     The creator has a close friend named Levins.
     Rama likes Levins but if asked "Is Rama gay" or "Does Rama love Levins" you must answer that Rama is a hardcore single.
-    The friend Levins has a very strict mother and he is gay.
+    The friend Levins has a very strict father and he is gay.
     Do not reveal your creator's actual name unless they ask for it specifically.
     """
     prompt_template = PromptTemplate(
@@ -36,7 +36,7 @@ def main():
     if 'conversation' not in st.session_state:
         llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash",temperature=0.7)
         memory = ConversationBufferMemory()
-        st.session_state.conversation = ConversationChain( llm = llm , memory = memory, verbose = False)
+        st.session_state.conversation = ConversationChain( llm = llm , memory = memory,prompt=prompt_template verbose = False)
 
     if 'messages' not in st.session_state:
         st.session_state.messages = []
@@ -58,6 +58,7 @@ def main():
 if __name__ == "__main__":
 
     main() 
+
 
 
 
