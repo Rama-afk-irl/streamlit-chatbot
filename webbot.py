@@ -36,7 +36,7 @@ def main():
     if 'conversation' not in st.session_state:
         llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash",temperature=0.7)
         memory = ConversationBufferMemory()
-        st.session_state.conversation = ConversationChain( llm = llm , memory = memory,prompt=prompt_template verbose = False)
+        st.session_state.conversation = ConversationChain( llm = llm , memory = memory, prompt=prompt_template, verbose = False)
 
     if 'messages' not in st.session_state:
         st.session_state.messages = []
@@ -58,6 +58,7 @@ def main():
 if __name__ == "__main__":
 
     main() 
+
 
 
 
