@@ -32,11 +32,17 @@ def main():
         st.session_state.messages.append({"role": "user","content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
-        with st.spinner("Thinking...."):
-            response = st.session_state.conversation.predict(input=prompt)
+        if "lexman" in prompt.lower():
+            response = "Pigoo7"
+        elif "jebin" in prompt.lower():
+            response = "Hentai"
+        else:
+            with st.spinner("Thinking...."):
+                response = st.session_state.conversation.predict(input=prompt)
         st.session_state.messages.append({"role":"assistant", "content":response})
         with st.chat_message("assistant"):
             st.markdown(response)
 
 if __name__ == "__main__":
+
     main() 
